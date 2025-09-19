@@ -1,0 +1,279 @@
+// global
+@font-face {
+  font-family: "Barlow"; /* لتحديد اسم للخط علي شان الاستخدام*/
+  src: url("../fonts/BarlowCondensed-Regular.ttf") format("truetype"); /* لتحديد مسار الخط و الفورمات بتاعه*/
+  font-weight: normal; /* لتحديد وزن الخط */
+  font-style: normal; /* لتحديد نمط الخط */
+}
+@font-face {
+  font-family: "BarlowB"; /* لتحديد اسم للخط علي شان الاستخدام*/
+  src: url("../fonts/BarlowCondensed-Bold.ttf") format("truetype"); /* لتحديد مسار الخط و الفورمات بتاعه*/
+  font-weight: normal; /* لتحديد وزن الخط */
+  font-style: normal; /* لتحديد نمط الخط */
+}
+* {
+  font-family: "Barlow";
+  padding: 0px;
+  margin: 0px;
+  transition: 0.5s;
+}
+#body {
+  position: relative;
+}
+#mainDiv {
+  width: 100%;
+  overflow: hidden;
+  #container {
+    height: 100vh;
+    width: 85%;
+    margin: auto;
+    // background: #000;
+    padding: 40px 0px;
+    #grayBackGround {
+      background: #edf2f6;
+      height: 70vh;
+      width: 50%;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: -1;
+      border-radius: 0px 0px 0px 100px;
+    }
+  }
+  // global
+  // start nav bar
+  #navBar {
+    // background: red;
+    // start PC nav bar
+    #PcNavbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // background: pink;
+      .content {
+        // background: purple;
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        align-items: center;
+        p {
+          a {
+            text-decoration: none;
+            color: #2b2f3b;
+            font-weight: 600;
+            text-transform: uppercase;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .login {
+            color: #878f99;
+          }
+        }
+        div {
+          height: 5px;
+          width: 5px;
+          border-radius: 50%;
+          background: #878f99;
+        }
+      }
+    }
+    // end PC nav bar
+    // start mobile nav bar
+    #mobileNavbar {
+      display: none;
+      // background: red;
+      width: 100%;
+      .images {
+        // background: blue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #listIcon {
+          cursor: pointer;
+        }
+      }
+      #list {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        div {
+          background: #fff;
+          width: 300px;
+          margin: 30px auto;
+          height: 250px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          border-radius: 5px;
+          padding: 10px;
+          box-shadow: 0px 0px 5px #0000005f;
+          p {
+            a {
+              color: #000;
+              text-decoration: none;
+              font-weight: 900;
+              font-size: 17px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            .login {
+              color: #878f99;
+            }
+          }
+          hr {
+            width: 90%;
+          }
+        }
+      }
+    }
+    // end mobile nav bar
+  }
+  // start responsive for navbar
+  @media (min-width: 0px) and (max-width: 800px) {
+    #container {
+      #grayBackGround {
+        width: 50%;
+      }
+    }
+    #navBar {
+      #PcNavbar {
+        display: none;
+      }
+      #mobileNavbar {
+        display: block;
+      }
+    }
+  }
+  // end responsive for navbar
+  // end nav bar
+
+  // start content
+  // start left column
+  #content {
+    width: 100%;
+    // background: red;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    #contentLeftcol {
+      // background: pink;
+      flex-basis: 50%;
+      width: 50%;
+      :nth-child(1) {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #00000081;
+        span {
+          background: #222840;
+          border-radius: 15px;
+          color: #fff;
+          font-weight: 600;
+          padding: 4px 10px;
+          margin-right: 15px;
+        }
+      }
+      h1 {
+        color: #222840;
+        text-transform: uppercase;
+        font-family: "BarlowB";
+        font-size: 60px;
+        // font-weight: 900;
+        margin-top: 15px;
+      }
+      :nth-child(3) {
+        color: #878f99;
+        margin: 20px 0px;
+        font-size: 20px;
+      }
+      div {
+        // background: blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        gap: 20px;
+        margin-top: 50px;
+        .btn {
+          border: none;
+          color: #fff;
+          background: #ff5d5e;
+          font-weight: 600;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          &:hover {
+            background: #ff8584;
+            cursor: pointer;
+          }
+        }
+        p {
+          color: #9b9b9d;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          font-size: 15px;
+        }
+      }
+    }
+    // end left column
+    // start right column
+    #contentrightcol {
+      // background: purple;
+      flex-basis: 50%;
+      width: 50%;
+      position: relative;
+      top: 0px;
+      right: -60px;
+    }
+  }
+}
+// start responsive of content
+@media (min-width: 0px) and (max-width: 800px) {
+  #mainDiv {
+    width: 100%;
+    // background: #000;
+    padding: 0px;
+    margin: 0px;
+    #container {
+      margin: auto;
+      width: 90%;
+      height: fit-content;
+      #content {
+        flex-direction: column-reverse;
+        gap: 50px;
+        margin-bottom: 50px;
+        // background: #0e4fd1;
+        #contentLeftcol {
+          width: 100%;
+          flex-basis: 100%;
+        }
+        #contentrightcol {
+          // background: purple;
+          flex-basis: 100%;
+          width: 100%;
+          position: relative;
+          top: 0px;
+          right: 0px;
+          margin-bottom: 50px;
+          img {
+            width: 150%;
+          }
+        }
+      }
+    }
+  }
+  // start left column
+
+  // end left column
+  // end right column
+
+  // end right column
+}
+// end responsive of content
+// end content
